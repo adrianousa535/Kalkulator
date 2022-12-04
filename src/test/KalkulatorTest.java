@@ -31,4 +31,11 @@ class KalkulatorTest {
         value = "5,7,5";
         assertEquals(17, Kalkulator.calc(value));
     }
+    @Test
+    void calcNewLine(){
+        String value;
+        value = "1\n2,3";
+        assertEquals(6, Kalkulator.calc(value));
+    }
+
 }

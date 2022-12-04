@@ -2,7 +2,7 @@ package main;
 
 public class Kalkulator {
     public static int calc(String value) {
-        String[] values = value.split(",", 0);
+        String[] values = value.split("[, \n]+", 0);
 
         int result=0;
 
