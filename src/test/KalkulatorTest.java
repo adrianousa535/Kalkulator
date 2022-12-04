@@ -37,5 +37,11 @@ class KalkulatorTest {
         value = "1\n2,3";
         assertEquals(6, Kalkulator.calc(value));
     }
+    @Test
+    void calcSelectedSeparator(){
+        String value;
+        value = "//;\n1;2";
+        assertEquals(3, Kalkulator.calc(value));
+    }
 
 }
