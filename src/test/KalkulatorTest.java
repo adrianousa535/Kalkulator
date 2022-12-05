@@ -43,5 +43,17 @@ class KalkulatorTest {
         value = "//;\n1;2";
         assertEquals(3, Kalkulator.calc(value));
     }
+    @Test
+    void calcSelectedSeparatorV2(){
+        String value;
+        value = "//a\n1a2a3";
+        assertEquals(6, Kalkulator.calc(value));
+    }
+    @Test
+    void calcSelectedSeparatorV3(){
+        String value;
+        value = "//:\n1:2:3";
+        assertEquals(6, Kalkulator.calc(value));
+    }
 
 }
