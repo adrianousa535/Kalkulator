@@ -55,5 +55,12 @@ class KalkulatorTest {
         value = "//:\n1:2:3";
         assertEquals(6, Kalkulator.calc(value));
     }
-
+    @Test
+    void calcNegException(){
+        String value;
+        value = "//;\n;1;-2;2;-3";
+        assertThrows(IllegalArgumentException.class, () -> {
+            Kalkulator.calc(value);
+        });
+    }
 }
