@@ -32,9 +32,8 @@ public class Kalkulator {
                     StringBuilder temp = new StringBuilder(separator);
                     separator = String.valueOf(temp.deleteCharAt(separator.length() - 1));
                 }
-                separator = "[" + separator + "]";
 
-                System.out.println(separator);
+                separator = "[" + separator + "]";
                 values = values[1].split(separator, 0);
             }
         }
