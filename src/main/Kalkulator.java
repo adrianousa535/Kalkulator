@@ -15,9 +15,27 @@ public class Kalkulator {
             char secondChar = values[0].charAt(1);
 
             if (firstChar == '/' && secondChar == '/') {
-                char separator = values[0].charAt(2);
-                String newRegex = String.valueOf(separator);
-                values = values[1].split(newRegex, 0);
+                String separator="";
+                String[] leftArray = values[0].split("/");
+
+                String[] tempSeparatorArray = leftArray[2].split("[\\[, \\]]");
+
+                for(String sep: tempSeparatorArray){
+                    separator += sep + " ";
+                }
+
+                if(separator.charAt(0) == ' '){
+                    StringBuffer temp = new StringBuffer(separator);
+                    separator = String.valueOf(temp.deleteCharAt(0));
+                }
+                if(separator.charAt(separator.length()-1) == ' ') {
+                    StringBuffer temp = new StringBuffer(separator);
+                    separator = String.valueOf(temp.deleteCharAt(separator.length() - 1));
+                }
+                separator = "[" + separator + "]";
+
+                System.out.println(separator);
+                values = values[1].split(separator, 0);
             }
         }
         int result=0;
@@ -32,6 +50,8 @@ public class Kalkulator {
             if (iValue < 0) {
                 NegativeArrayList.addValue(iValue);
                 neg = true;
+            }
+            else if (iValue >= 1000) {
             }
             else{
                 result += iValue;
