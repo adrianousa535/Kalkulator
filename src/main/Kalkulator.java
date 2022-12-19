@@ -25,11 +25,11 @@ public class Kalkulator {
                 }
 
                 if(separator.charAt(0) == ' '){
-                    StringBuffer temp = new StringBuffer(separator);
+                    StringBuilder temp = new StringBuilder(separator);
                     separator = String.valueOf(temp.deleteCharAt(0));
                 }
                 if(separator.charAt(separator.length()-1) == ' ') {
-                    StringBuffer temp = new StringBuffer(separator);
+                    StringBuilder temp = new StringBuilder(separator);
                     separator = String.valueOf(temp.deleteCharAt(separator.length() - 1));
                 }
                 separator = "[" + separator + "]";
@@ -47,6 +47,7 @@ public class Kalkulator {
             } catch (Exception e){
                 iValue = 0;
             }
+
             if (iValue < 0) {
                 NegativeArrayList.addValue(iValue);
                 neg = true;
